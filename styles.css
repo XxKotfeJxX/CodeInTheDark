@@ -2178,20 +2178,32 @@ a:focus-visible {
   }
 
   .tilt-a,
+  .tilt-b,
   .tilt-c,
+  .tilt-d,
   .tilt-e,
+  .tilt-f,
   .tilt-g,
+  .tilt-h,
   .tilt-i {
-    width: 94%;
-    justify-self: start;
+    width: 100%;
+    justify-self: stretch;
   }
 
-  .tilt-b,
-  .tilt-d,
-  .tilt-f,
-  .tilt-h {
-    width: 92%;
-    justify-self: end;
+  .tilt-a { transform: rotate(-1deg); }
+  .tilt-b { transform: rotate(0.9deg); }
+  .tilt-c { transform: rotate(-0.8deg); }
+  .tilt-d { transform: rotate(1.1deg); }
+  .tilt-e { transform: rotate(-0.9deg); }
+  .tilt-f { transform: rotate(1deg); }
+  .tilt-g { transform: rotate(-1.2deg); }
+  .tilt-h { transform: rotate(0.8deg); }
+  .tilt-i { transform: rotate(-0.9deg); }
+
+  .tilt-i {
+    grid-column: 1 / -1;
+    background: #1c2c4f;
+    border-color: #5a78d6;
   }
 
   .sticker.wide {
@@ -2207,7 +2219,7 @@ a:focus-visible {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
   .chaos-gallery .container {
     overflow-x: clip;
   }
