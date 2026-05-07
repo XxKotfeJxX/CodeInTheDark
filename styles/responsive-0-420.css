@@ -1,0 +1,46 @@
+/* Адаптив: 0–420 */
+
+@media (max-width: 420px) {
+  /* Варіант мікролейауту з нахилом для карток призів */
+  /* Ховаємо випадковий горизонтальний скрол через ротації */
+  .prize-shell {
+    overflow-x: clip;
+  }
+
+  /* Перекладаємо блок призів у 6-колонну мікросітку для шахового ефекту */
+  .prize-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    align-items: start;
+    gap: 10px;
+    margin-top: 18px;
+    padding-block: 4px;
+  }
+
+  /* Уніфікуємо центр трансформації перед локальними поворотами */
+  .prize-card {
+    transform-origin: center;
+  }
+
+  /* Точкове позиціонування кожної картки у мікросітці */
+  .prize-gold {
+    grid-column: 1 / -1;
+    transform: rotate(-0.9deg);
+  }
+
+  .prize-silver {
+    grid-column: 1 / span 5;
+    transform: translateY(-2px) rotate(0.8deg);
+  }
+
+  .prize-bronze {
+    grid-column: 2 / -1;
+    transform: translateY(-10px) rotate(-1deg);
+  }
+
+  /* Підлаштування бейджа під щільніший лейаут */
+  .diag-badge {
+    right: -8px;
+    top: 10px;
+    transform: rotate(22deg);
+  }
+}

@@ -1,0 +1,18 @@
+/* Доступність */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Поважаємо системні налаштування зменшення анімацій */
+  /* Вимикаємо плавний скрол, щоб уникати зайвого руху */
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Зводимо тривалість переходів і анімацій майже до нуля */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

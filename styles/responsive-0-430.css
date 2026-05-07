@@ -1,0 +1,27 @@
+/* Адаптив: 0–430 */
+
+@media (max-width: 430px) {
+  /* Складаємо картки призів в одну колонку на вузьких екранах */
+  .prize-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Прибираємо складні зсуви, щоб картки читалися стабільно */
+  .prize-gold {
+    transform: none;
+  }
+
+  .prize-silver {
+    transform: translateY(-2px);
+  }
+
+  .prize-bronze {
+    transform: translateY(4px);
+  }
+
+  /* Дрібна корекція позиції декоративного бейджа */
+  .diag-badge {
+    right: -10px;
+    transform: rotate(24deg);
+  }
+}
