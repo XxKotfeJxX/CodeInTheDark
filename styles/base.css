@@ -639,7 +639,7 @@ a:focus-visible {
 }
 
 .timeline-row:nth-child(3) {
-  animation-delay: 35ms;
+  animation-delay: 70ms;
 }
 
 .timeline-row:nth-child(4) {
@@ -647,7 +647,7 @@ a:focus-visible {
 }
 
 .timeline-row:nth-child(5) {
-  animation-delay: 35ms;
+  animation-delay: 140ms;
 }
 
 .timeline-row:hover,
@@ -733,7 +733,7 @@ a:focus-visible {
 }
 
 .rule-card:nth-child(3) {
-  animation-delay: 40ms;
+  animation-delay: 80ms;
 }
 
 .rule-card:nth-child(4) {
@@ -1018,7 +1018,7 @@ a:focus-visible {
 }
 
 .sticker:nth-child(3) {
-  animation-delay: 30ms;
+  animation-delay: 60ms;
 }
 
 .sticker:nth-child(4) {
@@ -1034,7 +1034,7 @@ a:focus-visible {
 }
 
 .sticker:nth-child(7) {
-  animation-delay: 90ms;
+  animation-delay: 180ms;
 }
 
 .sticker:nth-child(8) {
