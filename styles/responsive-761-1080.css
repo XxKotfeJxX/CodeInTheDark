@@ -64,7 +64,8 @@
   }
 
   .site-header {
-    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .header-grid {

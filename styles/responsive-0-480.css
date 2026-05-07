@@ -1,7 +1,7 @@
-/* Адаптив: 0–480 */
+/* РђРґР°РїС‚РёРІ: 0вЂ“480 */
 
 @media (max-width: 480px) {
-  /* Телефони: компактніша типографіка і щільні відступи */
+  /* РўРµР»РµС„РѕРЅРё: РєРѕРјРїР°РєС‚РЅС–С€Р° С‚РёРїРѕРіСЂР°С„С–РєР° С– С‰С–Р»СЊРЅС– РІС–РґСЃС‚СѓРїРё */
   body {
     padding-bottom: 0;
   }
@@ -38,7 +38,7 @@
     font-size: clamp(2rem, 12vw, 2.8rem);
   }
 
-  /* Експериментальний зигзаг лейаут блоку правил */
+  /* Р•РєСЃРїРµСЂРёРјРµРЅС‚Р°Р»СЊРЅРёР№ Р·РёРіР·Р°Рі Р»РµР№Р°СѓС‚ Р±Р»РѕРєСѓ РїСЂР°РІРёР» */
   .rules-grid {
     gap: 8px;
   }
@@ -64,7 +64,7 @@
     padding-bottom: 0;
   }
 
-  /* Корекції хедера/навігації для дуже вузьких екранів */
+  /* РљРѕСЂРµРєС†С–С— С…РµРґРµСЂР°/РЅР°РІС–РіР°С†С–С— РґР»СЏ РґСѓР¶Рµ РІСѓР·СЊРєРёС… РµРєСЂР°РЅС–РІ */
   .site-header .container {
     width: min(1180px, 96vw);
   }
@@ -107,7 +107,7 @@
     font-size: 10px;
   }
 
-  /* Візуальний баланс вступного блоку на ширинах телефона */
+  /* Р’С–Р·СѓР°Р»СЊРЅРёР№ Р±Р°Р»Р°РЅСЃ РІСЃС‚СѓРїРЅРѕРіРѕ Р±Р»РѕРєСѓ РЅР° С€РёСЂРёРЅР°С… С‚РµР»РµС„РѕРЅР° */
   .hero-copy h1 {
     font-size: clamp(3.3rem, 22vw, 4.8rem);
   }
@@ -184,7 +184,7 @@
     margin: 2px 0 1px;
   }
 
-  /* Декоративні трансформації колажу карток */
+  /* Р”РµРєРѕСЂР°С‚РёРІРЅС– С‚СЂР°РЅСЃС„РѕСЂРјР°С†С–С— РєРѕР»Р°Р¶Сѓ РєР°СЂС‚РѕРє */
   .card-rounds {
     grid-column: 1 / -1;
     min-height: 130px;
@@ -223,7 +223,6 @@
       rgba(182, 255, 45, 0.9),
       rgba(53, 232, 255, 0.25)
     );
-    filter: drop-shadow(0 0 7px rgba(182, 255, 45, 0.35));
     clip-path: polygon(0 24.2%, 100% 1%, 100% 3%, 0 26.2%);
     pointer-events: none;
     z-index: 0;
@@ -344,24 +343,24 @@
   }
 
   .rules-grid:has(.rule-2:hover) .rule-1,
-  .rules-grid:has(.rule-3:hover) .rule-1,
+  .rules-grid:has(.rule-4:hover) .rule-1,
   .rules-grid:has(.rule-2:focus-within) .rule-1,
-  .rules-grid:has(.rule-3:focus-within) .rule-1,
+  .rules-grid:has(.rule-4:focus-within) .rule-1,
   .rules-grid:has(.rule-2:hover) .rule-3,
-  .rules-grid:has(.rule-3:hover) .rule-3,
+  .rules-grid:has(.rule-4:hover) .rule-3,
   .rules-grid:has(.rule-2:focus-within) .rule-3,
-  .rules-grid:has(.rule-3:focus-within) .rule-3 {
+  .rules-grid:has(.rule-4:focus-within) .rule-3 {
     margin-top: -5px;
   }
 
   .rules-grid:has(.rule-2:hover) .rule-2,
-  .rules-grid:has(.rule-3:hover) .rule-2,
+  .rules-grid:has(.rule-4:hover) .rule-2,
   .rules-grid:has(.rule-2:focus-within) .rule-2,
-  .rules-grid:has(.rule-3:focus-within) .rule-2,
+  .rules-grid:has(.rule-4:focus-within) .rule-2,
   .rules-grid:has(.rule-2:hover) .rule-4,
-  .rules-grid:has(.rule-3:hover) .rule-4,
+  .rules-grid:has(.rule-4:hover) .rule-4,
   .rules-grid:has(.rule-2:focus-within) .rule-4,
-  .rules-grid:has(.rule-3:focus-within) .rule-4 {
+  .rules-grid:has(.rule-4:focus-within) .rule-4 {
     margin-top: 0;
   }
 
@@ -476,6 +475,52 @@
     max-inline-size: 88%;
   }
 
+  /* Persistent toggle state from JS: 2/3 => changed, 1/4 => base */
+  .rules-grid.rules-grid--changed .rule-1 {
+    clip-path: polygon(0 0, 85.4% 0, 92.2% 100%, 0 100%);
+  }
+
+  .rules-grid.rules-grid--changed .rule-2 {
+    clip-path: polygon(0.4% 0, 100% 0, 100% 100%, 7.2% 100%);
+  }
+
+  .rules-grid.rules-grid--changed .rule-3 {
+    clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+    margin-right: -14.5px;
+  }
+
+  .rules-grid.rules-grid--changed .rule-4 {
+    clip-path: polygon(7.8% 0, 100% 0, 100% 100%, 15.9% 100%);
+    margin-left: -14.5px;
+  }
+
+  .rules-grid.rules-grid--changed .rule-card h3,
+  .rules-grid.rules-grid--changed .rule-card p {
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .rules-grid.rules-grid--changed .rule-1 h3,
+  .rules-grid.rules-grid--changed .rule-3 h3 {
+    max-inline-size: 84%;
+  }
+
+  .rules-grid.rules-grid--changed .rule-1 p,
+  .rules-grid.rules-grid--changed .rule-3 p {
+    max-inline-size: 86%;
+  }
+
+  .rules-grid.rules-grid--changed .rule-2 h3,
+  .rules-grid.rules-grid--changed .rule-4 h3 {
+    max-inline-size: 86%;
+  }
+
+  .rules-grid.rules-grid--changed .rule-2 p,
+  .rules-grid.rules-grid--changed .rule-4 p {
+    max-inline-size: 88%;
+  }
+
   .rule-1::before,
   .rule-3::before,
   .rule-2::after,
@@ -509,7 +554,7 @@
     background: var(--pink);
   }
 
-  /* Базовий резервний варіант галереї перед фінальною 2-колонною сіткою */
+  /* Р‘Р°Р·РѕРІРёР№ СЂРµР·РµСЂРІРЅРёР№ РІР°СЂС–Р°РЅС‚ РіР°Р»РµСЂРµС— РїРµСЂРµРґ С„С–РЅР°Р»СЊРЅРѕСЋ 2-РєРѕР»РѕРЅРЅРѕСЋ СЃС–С‚РєРѕСЋ */
   .chaos-grid {
     grid-template-columns: 1fr;
   }
@@ -577,7 +622,7 @@
     font-size: clamp(1.7rem, 12vw, 2.4rem);
   }
 
-  /* Фінальне розташування стікерів для найменших телефонів */
+  /* Р¤С–РЅР°Р»СЊРЅРµ СЂРѕР·С‚Р°С€СѓРІР°РЅРЅСЏ СЃС‚С–РєРµСЂС–РІ РґР»СЏ РЅР°Р№РјРµРЅС€РёС… С‚РµР»РµС„РѕРЅС–РІ */
   .chaos-gallery .container {
     overflow-x: clip;
   }
@@ -653,7 +698,7 @@
   }
 
   .hero-copy h1 {
-    animation: hero-phone-flicker 720ms var(--ease-out-smooth) 120ms both;
+    animation: hero-phone-flicker 720ms var(--ease-out-smooth) 60ms both;
   }
 
   .prize-grid {
@@ -663,7 +708,8 @@
 
   .card-rounds::after {
     background-size: 220% 100%;
-    animation: rounds-edge-scan 3.4s linear infinite;
+    background-position: 35% 50%;
+    animation: none;
   }
 
   .rule-card {
@@ -685,17 +731,17 @@
 @keyframes hero-phone-flicker {
   0% {
     opacity: 0;
-    filter: blur(10px) brightness(1.15);
+    transform: translateY(10px) scale(0.98);
   }
 
   55% {
     opacity: 1;
-    filter: blur(0) brightness(1.02);
+    transform: translateY(0) scale(1);
   }
 
   100% {
     opacity: 1;
-    filter: blur(0) brightness(1);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -724,23 +770,24 @@
 @keyframes phone-grid-appear {
   from {
     opacity: 0;
-    filter: blur(7px);
+    transform: translateY(8px);
   }
 
   to {
     opacity: 1;
-    filter: blur(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes sticker-phone-appear {
   from {
     opacity: 0;
-    filter: blur(6px) saturate(0.85);
+    transform: translateY(6px);
   }
 
   to {
     opacity: 1;
-    filter: blur(0) saturate(1);
+    transform: translateY(0);
   }
 }
+
