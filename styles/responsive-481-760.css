@@ -1,0 +1,680 @@
+/* Адаптив: 481–760 */
+
+@media (max-width: 760px) {
+  /* Планшет портретна орієнтація + великі телефони: ключова мобільна поведінка */
+  .hero {
+    padding-top: 40px;
+  }
+
+  .bento,
+  .schedule,
+  .rules,
+  .prizes,
+  .judging,
+  .chaos-gallery {
+    padding: 58px 0;
+  }
+
+  .bento-grid,
+  .rules-grid,
+  .judging-grid,
+  .prize-grid,
+  .chaos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-blind,
+  .card-vote,
+  .sticker.wide {
+    grid-column: auto;
+  }
+
+  .timeline-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .row-badge {
+    justify-self: start;
+  }
+
+  .score-main {
+    font-size: 5.8rem;
+  }
+
+  .metric {
+    grid-template-columns: 70px minmax(0, 1fr) 30px;
+  }
+
+  /* Глобальне ущільнення контейнера і хедера */
+  body {
+    padding-bottom: 0;
+  }
+
+  body::before {
+    background-size: 28px 28px;
+    opacity: 0.16;
+  }
+
+  .container {
+    width: min(1180px, 94vw);
+  }
+
+  .site-header {
+    background: rgba(5, 6, 12, 0.92);
+    backdrop-filter: blur(7px);
+  }
+
+  .header-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand tools"
+      "nav nav";
+    gap: 8px 10px;
+    padding: 8px 0 10px;
+  }
+
+  .brand span {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .main-nav {
+    margin-right: -4px;
+    padding-right: 4px;
+  }
+
+  .main-nav a {
+    padding: 8px 11px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    min-height: 40px;
+  }
+
+  .pill {
+    font-size: 10px;
+    padding: 5px 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .header-tools {
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .arena-btn {
+    position: static;
+    transform: none;
+    z-index: auto;
+    border-radius: 999px;
+    min-height: 40px;
+    padding: 9px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+    box-shadow: 0 0 18px rgba(182, 255, 45, 0.24);
+  }
+
+  /* Вступний блок стає щільнішим і виразнішим на малих екранах */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 32px;
+    padding-bottom: 18px;
+  }
+
+  .hero-copy {
+    position: relative;
+  }
+
+  .hero-copy::after {
+    content: "FINAL";
+    position: absolute;
+    top: -12px;
+    right: -8px;
+    font-family: "Bebas Neue", "Impact", sans-serif;
+    font-size: clamp(4.6rem, 30vw, 9rem);
+    line-height: 0.8;
+    letter-spacing: 0.06em;
+    color: rgba(255, 79, 216, 0.11);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-copy > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(4.7rem, 24vw, 8.4rem);
+    line-height: 0.79;
+    text-shadow:
+      0 0 24px rgba(53, 232, 255, 0.15),
+      0 0 14px rgba(255, 79, 216, 0.2);
+  }
+
+  .word-without {
+    margin-left: clamp(10px, 4vw, 22px);
+  }
+
+  .word-light {
+    margin-left: clamp(28px, 9vw, 48px);
+  }
+
+  .hero-text {
+    margin: 14px 0 18px;
+    font-size: clamp(0.96rem, 4vw, 1.08rem);
+    max-width: 33ch;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 10px;
+    max-width: 460px;
+  }
+
+  .action-btn {
+    min-height: 44px;
+    width: 100%;
+  }
+
+  .hero-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .status-card {
+    min-height: 95px;
+    padding: 13px;
+  }
+
+  .status-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .status-card p {
+    font-size: 0.9rem;
+  }
+
+  .card-stacklist li {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .card-sticker {
+    grid-column: 1 / -1;
+    transform: rotate(-3deg);
+    margin: 2px 4px 0;
+    text-wrap: balance;
+  }
+
+  .ticker-track {
+    margin-top: 24px;
+    overflow: hidden;
+  }
+
+  .ticker {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    padding: 9px 0;
+  }
+
+  /* Адаптивні перевизначення по секціях */
+  .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(116px, auto);
+    gap: 10px;
+  }
+
+  .bento-card {
+    padding: 14px;
+  }
+
+  .bento-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-blind,
+  .card-vote {
+    grid-column: 1 / -1;
+  }
+
+  .card-judging {
+    grid-row: span 1;
+  }
+
+  .card-cssonly {
+    min-height: 110px;
+  }
+
+  .big-number {
+    font-size: clamp(4.8rem, 20vw, 6rem);
+  }
+
+  /* Таймлайн: стек карток із направляючою лінією */
+  .timeline-layout {
+    gap: 12px;
+  }
+
+  .timeline-word {
+    font-size: clamp(2.4rem, 13vw, 3.6rem);
+    letter-spacing: 0.12em;
+  }
+
+  .timeline-list {
+    position: relative;
+    padding-left: 12px;
+    gap: 12px;
+  }
+
+  .timeline-list::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--cyan), var(--pink));
+    box-shadow: 0 0 12px rgba(53, 232, 255, 0.4);
+  }
+
+  .timeline-row {
+    position: relative;
+    margin-left: 9px;
+    padding: 12px 12px 12px 14px;
+    gap: 8px;
+  }
+
+  .time-chip {
+    width: fit-content;
+    padding: 7px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+
+  .row-badge {
+    font-size: 11px;
+    padding: 6px 9px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .row-registration {
+    --row-accent: var(--cyan);
+  }
+
+  .row-warmup {
+    --row-accent: var(--lime);
+  }
+
+  .row-round1 {
+    --row-accent: var(--orange);
+  }
+
+  .row-semifinal {
+    --row-accent: #ffc84f;
+  }
+
+  .row-final {
+    --row-accent: var(--pink);
+  }
+
+  /* Правила, призи, суддівство, галерея */
+  .rules-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .rule-card {
+    min-height: 170px;
+    padding: 16px 14px;
+  }
+
+  .rule-number {
+    font-size: clamp(3.8rem, 18vw, 5rem);
+    right: 9px;
+    top: 4px;
+  }
+
+  .rule-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .rule-card p {
+    font-size: 0.92rem;
+  }
+
+  .prize-shell {
+    padding: 18px;
+  }
+
+  .prize-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .prize-card {
+    min-height: 170px;
+    padding: 14px;
+  }
+
+  .prize-gold {
+    grid-column: 1 / -1;
+    min-height: 208px;
+    transform: translateY(-4px);
+  }
+
+  .prize-gold::after {
+    width: 88px;
+    height: 88px;
+    top: -22px;
+    right: -10px;
+  }
+
+  .prize-silver {
+    transform: translateY(8px);
+  }
+
+  .prize-bronze {
+    min-height: 175px;
+  }
+
+  .diag-badge {
+    right: -14px;
+    top: 12px;
+    padding: 5px 20px;
+    font-size: 10px;
+  }
+
+  .judging-grid {
+    gap: 12px;
+  }
+
+  .judges-panel,
+  .score-panel {
+    padding: 16px 14px;
+  }
+
+  .judges-panel h2 {
+    font-size: 1.55rem;
+  }
+
+  .judges-panel ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .judges-panel li {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .score-main {
+    font-size: clamp(4.2rem, 24vw, 6.1rem);
+    margin-bottom: 14px;
+  }
+
+  .score-main span {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .metric {
+    grid-template-columns: 64px minmax(0, 1fr) 30px;
+    gap: 8px;
+  }
+
+  .chaos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  .sticker {
+    min-height: 66px;
+    padding: 12px 10px;
+    font-size: 11px;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sticker.wide {
+    grid-column: 1 / -1;
+  }
+
+  /* Ущільнення футера і заклик до дії */
+  .join-cta {
+    margin-top: 20px;
+    padding: 14px;
+  }
+
+  .join-cta h2 {
+    font-size: clamp(1.3rem, 8vw, 2rem);
+  }
+
+  .site-footer {
+    padding: 24px 0 20px;
+  }
+
+  .footer-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-bottom: 3px;
+    scrollbar-width: none;
+  }
+
+  .footer-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .footer-nav a {
+    flex: 0 0 auto;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid #36406f;
+    border-radius: 999px;
+    background: rgba(16, 21, 40, 0.8);
+  }
+
+  .footer-line {
+    font-size: clamp(2rem, 15vw, 3.2rem);
+    line-height: 0.88;
+  }
+
+  .hero-copy h1 {
+    animation: hero-neon-mobile 820ms var(--ease-out-smooth) 120ms both;
+  }
+
+  .hero-copy::after {
+    animation: hero-shadow-mobile 1.1s var(--ease-out-smooth) 180ms both;
+  }
+
+  .card-sticker {
+    animation: sticker-note-mobile 640ms var(--ease-out-smooth) 220ms both;
+  }
+
+  .timeline-list::before {
+    animation: rail-pulse-mobile 2.8s ease-in-out infinite;
+  }
+
+  .rule-card {
+    animation-name: rule-mobile-appear;
+    animation-duration: 520ms;
+  }
+
+  .sticker {
+    animation-name: sticker-mobile-appear;
+    animation-duration: 480ms;
+  }
+}
+
+@media (max-width: 760px) and (min-width: 481px) {
+  /* Лише 481–760: щільніша сітка стікерів і вирівнювання списку суддів */
+  .judges-panel li:last-child {
+    grid-column: 1 / -1;
+    justify-content: center;
+    text-align: center;
+    min-height: 44px;
+    font-weight: 700;
+    border-left-color: var(--lime);
+    background: linear-gradient(
+      90deg,
+      rgba(182, 255, 45, 0.2),
+      rgba(182, 255, 45, 0.07) 40%,
+      #161c38 100%
+    );
+    box-shadow: inset 0 0 0 1px rgba(182, 255, 45, 0.18);
+  }
+
+  .chaos-gallery .container {
+    overflow-x: clip;
+  }
+
+  .chaos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: minmax(52px, auto);
+    margin-top: 10px;
+    gap: 7px;
+    overflow: hidden;
+    padding-block: 4px;
+    padding-inline: 3px;
+  }
+
+  .sticker {
+    min-height: 52px;
+    padding: 8px 6px;
+    font-size: 10px;
+    letter-spacing: 0.055em;
+    line-height: 1.12;
+    text-wrap: balance;
+    transform-origin: center;
+    animation-duration: 420ms;
+  }
+
+  .sticker.wide {
+    grid-column: span 2;
+  }
+
+  .tilt-a {
+    transform: rotate(-1.6deg);
+  }
+
+  .tilt-b {
+    transform: rotate(1.3deg);
+  }
+
+  .tilt-c {
+    transform: rotate(-0.8deg);
+  }
+
+  .tilt-d {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    transform: rotate(2deg);
+  }
+
+  .tilt-e {
+    transform: rotate(-1.2deg);
+  }
+
+  .tilt-f {
+    transform: rotate(1.6deg);
+  }
+
+  .tilt-g {
+    transform: rotate(-1.8deg);
+  }
+
+  .tilt-h {
+    transform: rotate(1.1deg);
+  }
+
+  .tilt-i {
+    transform: rotate(-1.2deg);
+  }
+}
+
+@keyframes hero-neon-mobile {
+  from {
+    opacity: 0;
+    filter: blur(10px) saturate(1.25);
+    text-shadow: none;
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+  }
+}
+
+@keyframes hero-shadow-mobile {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes rail-pulse-mobile {
+  0%,
+  100% {
+    opacity: 0.7;
+    box-shadow: 0 0 8px rgba(53, 232, 255, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 16px rgba(255, 79, 216, 0.45);
+  }
+}
+
+@keyframes rule-mobile-appear {
+  from {
+    opacity: 0;
+    filter: blur(7px) brightness(0.95);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes sticker-mobile-appear {
+  from {
+    opacity: 0;
+    filter: blur(6px) saturate(0.85);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+  }
+}
+
+@keyframes sticker-note-mobile {
+  from {
+    opacity: 0;
+    filter: blur(7px) brightness(0.9);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+  }
+}

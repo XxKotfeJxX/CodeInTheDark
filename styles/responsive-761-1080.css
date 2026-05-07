@@ -1,0 +1,220 @@
+/* Адаптив: 761–1080 */
+
+@media (max-width: 1080px) {
+  /* Планшет у горизонтальній орієнтації + малий ноутбук: структурні зміни лейауту */
+  .header-grid {
+    grid-template-columns: 1fr;
+    padding: 12px 0;
+    gap: 11px;
+  }
+
+  .main-nav,
+  .header-tools {
+    justify-content: flex-start;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(4.2rem, 18vw, 8.2rem);
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-judging {
+    grid-row: auto;
+  }
+
+  .timeline-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-word {
+    writing-mode: horizontal-tb;
+    transform: none;
+    border-left: 0;
+    border-bottom: 1px solid #354172;
+    padding: 0 0 8px;
+  }
+
+  .prize-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prize-gold,
+  .prize-silver {
+    transform: none;
+  }
+
+  .chaos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .footer-line {
+    text-align: left;
+  }
+
+  .site-header {
+    backdrop-filter: blur(9px);
+  }
+
+  .header-grid {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand tools"
+      "nav nav";
+    gap: 10px 12px;
+    padding: 10px 0 12px;
+  }
+
+  .brand {
+    grid-area: brand;
+  }
+
+  .main-nav {
+    grid-area: nav;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a {
+    flex: 0 0 auto;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-tools {
+    grid-area: tools;
+    justify-content: flex-end;
+  }
+
+  .hero {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 1080px) and (min-width: 761px) {
+  /* Точні налаштування 761–1080 для балансу вступного блоку і карток */
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.9rem, 10.5vw, 6.8rem);
+    line-height: 0.82;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    max-width: 34ch;
+    margin: 14px 0 18px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-stack {
+    gap: 8px;
+  }
+
+  .status-card {
+    min-height: 96px;
+    padding: 12px;
+  }
+
+  .status-card .mini {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .status-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+
+  .status-card p {
+    font-size: 0.86rem;
+    line-height: 1.35;
+  }
+
+  .card-stacklist li {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .card-sticker h3 {
+    font-size: clamp(1.45rem, 2vw, 1.7rem);
+    line-height: 1.05;
+  }
+
+  .prize-silver {
+    transform: translateY(16px);
+  }
+
+  .prize-bronze {
+    margin-top: 15px;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 520px);
+  }
+}
+
+@keyframes reveal-up-tablet {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero-copy,
+  .hero-stack,
+  .bento-grid,
+  .timeline-layout,
+  .rules-grid,
+  .prize-shell,
+  .judging-grid,
+  .chaos-grid,
+  .join-cta {
+    animation-name: reveal-up-tablet;
+    animation-duration: 600ms;
+  }
+
+  .timeline-row,
+  .rule-card,
+  .prize-card,
+  .sticker,
+  .status-card {
+    animation-duration: 520ms;
+  }
+}

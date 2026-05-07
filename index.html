@@ -1,317 +1,343 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CTRL ALT NIGHT — Code in the Dark Final</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="page-glow" aria-hidden="true"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTRL ALT NIGHT — Code in the Dark Final</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Глобальний фоновий шар сяйва (лише декоративний) -->
+    <div class="page-glow" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="container header-grid">
-      <a class="brand" href="#top" aria-label="CTRL ALT NIGHT home">
-        <span>CTRL</span>
-        <span>ALT</span>
-        <span>NIGHT</span>
-      </a>
+    <!-- Липкий хедер: логотип, головна навігація, заклик до дії -->
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#rounds">Раунди</a>
-        <a href="#rules">Правила</a>
-        <a href="#schedule">Розклад</a>
-        <a href="#prizes">Призи</a>
-        <a href="#join">Участь</a>
-      </nav>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#top" aria-label="CTRL ALT NIGHT home">
+          <span>CTRL</span>
+          <span>ALT</span>
+          <span>NIGHT</span>
+        </a>
 
-      <div class="header-tools">
-        <p class="pill">Final Round · 15:00</p>
-        <a class="arena-btn" href="#join">Enter Arena</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#rounds">Раунди</a>
+          <a href="#rules">Правила</a>
+          <a href="#schedule">Розклад</a>
+          <a href="#prizes">Призи</a>
+          <a href="#join">Участь</a>
+        </nav>
+
+        <div class="header-tools">
+          <p class="pill">Final Round · 15:00</p>
+          <a class="arena-btn" href="#join">Enter Arena</a>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">IT-фестиваль · Фінал Code in the Dark</p>
-          <h1>
-            <span class="word-code">CODE</span>
-            <span class="word-without">WITHOUT</span>
-            <span class="word-light">LIGHT</span>
-          </h1>
-          <p class="hero-text">Один скріншот. Пʼятнадцять хвилин. Кров з носу.</p>
-          <div class="hero-actions">
-            <a class="action-btn primary" href="#join">Почати</a>
-            <a class="action-btn ghost" href="#rules">Правила</a>
+    <main id="top">
+      <!-- Вступний блок: айдентика події і головний заклик до дії -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">IT-фестиваль · Фінал Code in the Dark</p>
+            <h1>
+              <span class="word-code">CODE</span>
+              <span class="word-without">WITHOUT</span>
+              <span class="word-light">LIGHT</span>
+            </h1>
+            <p class="hero-text">
+              Один скріншот. Пʼятнадцять хвилин. Кров з носу.
+            </p>
+            <div class="hero-actions">
+              <a class="action-btn primary" href="#join">Почати</a>
+              <a class="action-btn ghost" href="#rules">Правила</a>
+            </div>
           </div>
+
+          <aside class="hero-stack" aria-label="Challenge status cards">
+            <article class="status-card card-timer">
+              <p class="mini">Window</p>
+              <h3>15 min</h3>
+              <p>Veni, vidi, vici.</p>
+            </article>
+
+            <article class="status-card card-preview">
+              <p class="mini">Vision</p>
+              <h3>No preview</h3>
+              <p>Ти пам'ятаєш тільки те, що мозок в силах втримати.</p>
+            </article>
+
+            <article class="status-card card-stacklist">
+              <p class="mini">Loadout</p>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Panic</li>
+              </ul>
+            </article>
+
+            <article class="status-card card-sticker">
+              <p class="mini">Emergency note</p>
+              <h3>CTRL + ALT + PRAY</h3>
+            </article>
+          </aside>
         </div>
 
-        <aside class="hero-stack" aria-label="Challenge status cards">
-          <article class="status-card card-timer">
-            <p class="mini">Window</p>
-            <h3>15 min</h3>
-            <p>Veni, vidi, vici.</p>
-          </article>
+        <div class="ticker-track">
+          <div class="container">
+            <p class="ticker">
+              HTML · CSS · MEMORY · SPEED · PAIN · PIXELS · CHAOS · FINAL · HTML
+              · CSS · MEMORY · SPEED · PAIN · PIXELS · CHAOS · FINAL
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <article class="status-card card-preview">
-            <p class="mini">Vision</p>
-            <h3>No preview</h3>
-            <p>Ти пам'ятаєш тільки те, що мозок в силах втримати.</p>
-          </article>
+      <!-- Огляд раундів: ключова механіка у бенто-картках -->
+      <section class="bento" id="rounds">
+        <div class="container">
+          <p class="section-kicker">Що буде цієї ночі</p>
+          <div class="bento-grid">
+            <article class="bento-card card-blind">
+              <h3>Сліпа верстка</h3>
+              <p>
+                Скріншот показується один раз, далі все рендерить твоя пам'ять.
+              </p>
+            </article>
 
-          <article class="status-card card-stacklist">
-            <p class="mini">Loadout</p>
+            <article class="bento-card card-nofigma">
+              <h3>Без Figma</h3>
+              <p>Жодна додаткова вкладка не врятує.</p>
+            </article>
+
+            <article class="bento-card card-judging">
+              <h3>Живі судді</h3>
+              <p>
+                Точність верстки й чистота коду оцінюються людьми (Навіть не
+                ШІ).
+              </p>
+            </article>
+
+            <article class="bento-card card-vote">
+              <h3>Голосування глядачів</h3>
+              <p>Люди вирішують, чия версія найближча й найсміливіша.</p>
+            </article>
+
+            <article class="bento-card card-cssonly">
+              <h3>Лише CSS</h3>
+            </article>
+
+            <article class="bento-card card-rounds">
+              <span class="big-number">04</span>
+              <h3>Раунди</h3>
+              <p>Розігрів, основна сцена, півфінал і фінальний біль.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Таймлайн розкладу: хід події за часом -->
+      <section class="schedule" id="schedule">
+        <div class="container timeline-layout">
+          <p class="timeline-word">TIMELINE</p>
+
+          <div class="timeline-list">
+            <article class="timeline-row row-registration">
+              <div class="time-chip">18:00</div>
+              <div class="event-copy">
+                <h3>Реєстрація</h3>
+                <p>Бейджі, кофеїн, розминаємо пальчики.</p>
+              </div>
+              <span class="row-badge">Вхід A</span>
+            </article>
+
+            <article class="timeline-row row-warmup">
+              <div class="time-chip">18:40</div>
+              <div class="event-copy">
+                <h3>Розігрів</h3>
+                <p>Швидкий мінічелендж, щоб ви звикли до страждань.</p>
+              </div>
+              <span class="row-badge">10 хв</span>
+            </article>
+
+            <article class="timeline-row row-round1">
+              <div class="time-chip">19:00</div>
+              <div class="event-copy">
+                <h3>Раунд 1</h3>
+                <p>Перша сліпа верстка. Пам'ять починає відмовляти.</p>
+              </div>
+              <span class="row-badge">Основа</span>
+            </article>
+
+            <article class="timeline-row row-semifinal">
+              <div class="time-chip">19:30</div>
+              <div class="event-copy">
+                <h3>Півфінал</h3>
+                <p>Виживають лише найстабільніші.</p>
+              </div>
+              <span class="row-badge">Top 8</span>
+            </article>
+
+            <article class="timeline-row row-final">
+              <div class="time-chip">20:00</div>
+              <div class="event-copy">
+                <h3>Фінальний забіг</h3>
+                <p>Останній скріншот. Без права на помилку.</p>
+              </div>
+              <span class="row-badge">Фінал</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Правила: обмеження і вимоги до здачі -->
+      <section class="rules" id="rules">
+        <div class="container">
+          <p class="section-kicker">Rules of Survival</p>
+          <div class="rules-grid">
+            <article class="rule-card rule-1">
+              <span class="rule-number">01</span>
+              <h3>Дивись один раз</h3>
+              <p>
+                Оригінальний макет з'являється ненадовго. Дивись уважно, кліпай
+                потім.
+              </p>
+            </article>
+
+            <article class="rule-card rule-2">
+              <span class="rule-number">02</span>
+              <h3>Кодуй наосліп</h3>
+              <p>
+                Жодного скріншота під час коду. Єдиний інструмент — пам'ять.
+              </p>
+            </article>
+
+            <article class="rule-card rule-3">
+              <span class="rule-number">03</span>
+              <h3>Надішли ZIP</h3>
+              <p>Коли таймер завершується, надішли zip з HTML і CSS файлами.</p>
+            </article>
+
+            <article class="rule-card rule-4">
+              <span class="rule-number">04</span>
+              <h3>Тихо молися</h3>
+              <p>Тобі залишається тільки вірити, що ти зробив все добре.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Призи: подіум і нагороди -->
+      <section class="prizes" id="prizes">
+        <div class="container prize-shell">
+          <h2>ПРИЗИ ДЛЯ ТИХ, ХТО ВИЖИВ</h2>
+          <p>Три місця на подіумі, вічна слава і фото на пам'ять.</p>
+
+          <div class="prize-grid">
+            <article class="prize-card prize-gold">
+              <p class="rank">1 місце</p>
+              <h3>Золота клавіатура</h3>
+              <p>Ми ще не придумали.</p>
+            </article>
+
+            <article class="prize-card prize-silver">
+              <p class="rank">2 місце</p>
+              <h3>Срібна миша</h3>
+              <p>Шось та й буде.</p>
+            </article>
+
+            <article class="prize-card prize-bronze">
+              <span class="diag-badge">рідкісний дроп</span>
+              <p class="rank">3 місце</p>
+              <h3>Бронзовий кабель</h3>
+              <p>Якась хрінь, але непонятно яка.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Суддівство: критерії та розподіл балів -->
+      <section class="judging">
+        <div class="container judging-grid">
+          <article class="judges-panel">
+            <p class="section-kicker">Judge Checklist</p>
+            <h2>Судді дивляться на:</h2>
             <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Panic</li>
+              <li>візуальна схожість</li>
+              <li>чиста структура</li>
+              <li>відступи</li>
+              <li>кольори</li>
+              <li>сміливість</li>
             </ul>
           </article>
 
-          <article class="status-card card-sticker">
-            <p class="mini">Emergency note</p>
-            <h3>CTRL + ALT + PRAY</h3>
-          </article>
-        </aside>
-      </div>
+          <article class="score-panel">
+            <div class="score-main">100 <span>pts</span></div>
 
-      <div class="ticker-track">
+            <div class="metric">
+              <p>Visual</p>
+              <div class="meter"><span style="width: 50%"></span></div>
+              <b>50</b>
+            </div>
+
+            <div class="metric">
+              <p>Layout</p>
+              <div class="meter"><span style="width: 25%"></span></div>
+              <b>25</b>
+            </div>
+
+            <div class="metric">
+              <p>Code</p>
+              <div class="meter"><span style="width: 15%"></span></div>
+              <b>15</b>
+            </div>
+
+            <div class="metric">
+              <p>Details</p>
+              <div class="meter"><span style="width: 10%"></span></div>
+              <b>10</b>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Галерея хаосу + фінальний заклик до участі -->
+      <section class="chaos-gallery" id="join">
         <div class="container">
-          <p class="ticker">HTML · CSS · MEMORY · SPEED · PAIN · PIXELS · CHAOS · FINAL · HTML · CSS · MEMORY · SPEED · PAIN · PIXELS · CHAOS · FINAL</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="bento" id="rounds">
-      <div class="container">
-        <p class="section-kicker">Що буде цієї ночі</p>
-        <div class="bento-grid">
-          <article class="bento-card card-blind">
-            <h3>Сліпа верстка</h3>
-            <p>Скріншот показується один раз, далі все рендерить твоя пам'ять.</p>
-          </article>
-
-          <article class="bento-card card-nofigma">
-            <h3>Без Figma</h3>
-            <p>Жодна додаткова вкладка не врятує.</p>
-          </article>
-
-          <article class="bento-card card-judging">
-            <h3>Живі судді</h3>
-            <p>Точність верстки й чистота коду оцінюються людьми (Навіть не ШІ).</p>
-          </article>
-
-          <article class="bento-card card-vote">
-            <h3>Голосування глядачів</h3>
-            <p>Люди вирішують, чия версія найближча й найсміливіша.</p>
-          </article>
-
-          <article class="bento-card card-cssonly">
-            <h3>Лише CSS</h3>
-          </article>
-
-          <article class="bento-card card-rounds">
-            <span class="big-number">04</span>
-            <h3>Раунди</h3>
-            <p>Розігрів, основна сцена, півфінал і фінальний біль.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="schedule" id="schedule">
-      <div class="container timeline-layout">
-        <p class="timeline-word">TIMELINE</p>
-
-        <div class="timeline-list">
-          <article class="timeline-row row-registration">
-            <div class="time-chip">18:00</div>
-            <div class="event-copy">
-              <h3>Реєстрація</h3>
-              <p>Бейджі, кофеїн, розминаємо пальчики.</p>
-            </div>
-            <span class="row-badge">Вхід A</span>
-          </article>
-
-          <article class="timeline-row row-warmup">
-            <div class="time-chip">18:40</div>
-            <div class="event-copy">
-              <h3>Розігрів</h3>
-              <p>Швидкий мінічелендж, щоб ви звикли до страждань.</p>
-            </div>
-            <span class="row-badge">10 хв</span>
-          </article>
-
-          <article class="timeline-row row-round1">
-            <div class="time-chip">19:00</div>
-            <div class="event-copy">
-              <h3>Раунд 1</h3>
-              <p>Перша сліпа верстка. Пам'ять починає відмовляти.</p>
-            </div>
-            <span class="row-badge">Основа</span>
-          </article>
-
-          <article class="timeline-row row-semifinal">
-            <div class="time-chip">19:30</div>
-            <div class="event-copy">
-              <h3>Півфінал</h3>
-              <p>Виживають лише найстабільніші.</p>
-            </div>
-            <span class="row-badge">Top 8</span>
-          </article>
-
-          <article class="timeline-row row-final">
-            <div class="time-chip">20:00</div>
-            <div class="event-copy">
-              <h3>Фінальний забіг</h3>
-              <p>Останній скріншот. Без права на помилку.</p>
-            </div>
-            <span class="row-badge">Фінал</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="rules" id="rules">
-      <div class="container">
-        <p class="section-kicker">Rules of Survival</p>
-        <div class="rules-grid">
-          <article class="rule-card rule-1">
-            <span class="rule-number">01</span>
-            <h3>Дивись один раз</h3>
-            <p>Оригінальний макет з'являється ненадовго. Дивись уважно, кліпай потім.</p>
-          </article>
-
-          <article class="rule-card rule-2">
-            <span class="rule-number">02</span>
-            <h3>Кодуй наосліп</h3>
-            <p>Жодного скріншота під час коду. Єдиний інструмент — пам'ять.</p>
-          </article>
-
-          <article class="rule-card rule-3">
-            <span class="rule-number">03</span>
-            <h3>Надішли ZIP</h3>
-            <p>Коли таймер завершується, надішли zip з HTML і CSS файлами.</p>
-          </article>
-
-          <article class="rule-card rule-4">
-            <span class="rule-number">04</span>
-            <h3>Тихо молися</h3>
-            <p>Тобі залишається тільки вірити, що ти зробив все добре.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="prizes" id="prizes">
-      <div class="container prize-shell">
-        <h2>ПРИЗИ ДЛЯ ТИХ, ХТО ВИЖИВ</h2>
-        <p>Три місця на подіумі, вічна слава і фото на пам'ять.</p>
-
-        <div class="prize-grid">
-          <article class="prize-card prize-gold">
-            <p class="rank">1 місце</p>
-            <h3>Золота клавіатура</h3>
-            <p>Ми ще не придумали.</p>
-          </article>
-
-          <article class="prize-card prize-silver">
-            <p class="rank">2 місце</p>
-            <h3>Срібна миша</h3>
-            <p>Шось та й буде.</p>
-          </article>
-
-          <article class="prize-card prize-bronze">
-            <span class="diag-badge">рідкісний дроп</span>
-            <p class="rank">3 місце</p>
-            <h3>Бронзовий кабель</h3>
-            <p>Якась хрінь, але непонятно яка.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="judging">
-      <div class="container judging-grid">
-        <article class="judges-panel">
-          <p class="section-kicker">Judge Checklist</p>
-          <h2>Судді дивляться на:</h2>
-          <ul>
-            <li>візуальна схожість</li>
-            <li>чиста структура</li>
-            <li>відступи</li>
-            <li>кольори</li>
-            <li>сміливість</li>
-          </ul>
-        </article>
-
-        <article class="score-panel">
-          <div class="score-main">100 <span>pts</span></div>
-
-          <div class="metric">
-            <p>Visual</p>
-            <div class="meter"><span style="width: 50%;"></span></div>
-            <b>50</b>
+          <p class="section-kicker">Chaos Gallery</p>
+          <div class="chaos-grid">
+            <article class="sticker tilt-a">margin panic</article>
+            <article class="sticker tilt-b">display flex</article>
+            <article class="sticker tilt-c wide">why is it centered</article>
+            <article class="sticker tilt-d">404 brain</article>
+            <article class="sticker tilt-e">pixel crime</article>
+            <article class="sticker tilt-f wide">final boss mode</article>
+            <article class="sticker tilt-g">grid rage</article>
+            <article class="sticker tilt-h">one more div</article>
+            <article class="sticker tilt-i">overflow hidden</article>
           </div>
 
-          <div class="metric">
-            <p>Layout</p>
-            <div class="meter"><span style="width: 25%;"></span></div>
-            <b>25</b>
+          <div class="join-cta">
+            <h2>Готовий увійти в арену?</h2>
+            <a href="#top" class="action-btn primary">Join CTRL ALT NIGHT</a>
           </div>
-
-          <div class="metric">
-            <p>Code</p>
-            <div class="meter"><span style="width: 15%;"></span></div>
-            <b>15</b>
-          </div>
-
-          <div class="metric">
-            <p>Details</p>
-            <div class="meter"><span style="width: 10%;"></span></div>
-            <b>10</b>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="chaos-gallery" id="join">
-      <div class="container">
-        <p class="section-kicker">Chaos Gallery</p>
-        <div class="chaos-grid">
-          <article class="sticker tilt-a">margin panic</article>
-          <article class="sticker tilt-b">display flex</article>
-          <article class="sticker tilt-c wide">why is it centered</article>
-          <article class="sticker tilt-d">404 brain</article>
-          <article class="sticker tilt-e">pixel crime</article>
-          <article class="sticker tilt-f wide">final boss mode</article>
-          <article class="sticker tilt-g">grid rage</article>
-          <article class="sticker tilt-h">one more div</article>
-          <article class="sticker tilt-i">overflow hidden</article>
         </div>
+      </section>
+    </main>
 
-        <div class="join-cta">
-          <h2>Готовий увійти в арену?</h2>
-          <a href="#top" class="action-btn primary">Join CTRL ALT NIGHT</a>
-        </div>
+    <!-- Футер: додаткова навігація і фінальний слоган -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p class="footer-brand">CTRL ALT NIGHT</p>
+        <nav class="footer-nav" aria-label="Footer links">
+          <a href="#rounds">Раунди</a>
+          <a href="#rules">Правила</a>
+          <a href="#schedule">Розклад</a>
+          <a href="#prizes">Призи</a>
+        </nav>
+        <p class="footer-line">SEE YOU IN THE DARK</p>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p class="footer-brand">CTRL ALT NIGHT</p>
-      <nav class="footer-nav" aria-label="Footer links">
-        <a href="#rounds">Раунди</a>
-        <a href="#rules">Правила</a>
-        <a href="#schedule">Розклад</a>
-        <a href="#prizes">Призи</a>
-      </nav>
-      <p class="footer-line">SEE YOU IN THE DARK</p>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
