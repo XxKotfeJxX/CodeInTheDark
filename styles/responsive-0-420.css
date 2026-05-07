@@ -14,11 +14,15 @@
     gap: 10px;
     margin-top: 18px;
     padding-block: 4px;
+    animation-name: prize-tilt-grid-420;
+    animation-duration: 560ms;
   }
 
   /* Уніфікуємо центр трансформації перед локальними поворотами */
   .prize-card {
     transform-origin: center;
+    animation-name: prize-tilt-card-420;
+    animation-duration: 520ms;
   }
 
   /* Точкове позиціонування кожної картки у мікросітці */
@@ -42,5 +46,41 @@
     right: -8px;
     top: 10px;
     transform: rotate(22deg);
+    animation: badge-swing-420 2.8s ease-in-out infinite;
+  }
+}
+
+@keyframes prize-tilt-grid-420 {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes prize-tilt-card-420 {
+  from {
+    opacity: 0;
+    filter: blur(7px) brightness(0.94);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes badge-swing-420 {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.16);
   }
 }
