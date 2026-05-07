@@ -28,19 +28,19 @@
   .diag-badge {
     right: -10px;
     transform: rotate(24deg);
-    animation: badge-pulse-430 2.4s ease-in-out infinite;
+    animation: none;
   }
 }
 
 @keyframes prize-stack-430 {
   from {
     opacity: 0;
-    filter: blur(7px) saturate(0.9);
+    transform: translateY(8px) scale(0.995);
   }
 
   to {
     opacity: 1;
-    filter: blur(0) saturate(1);
+    transform: translateY(0) scale(1);
   }
 }
 

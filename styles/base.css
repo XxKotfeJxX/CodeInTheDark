@@ -1,8 +1,8 @@
-/* Базові стилі: підхід від десктопа і спільні компоненти */
+/* Р‘Р°Р·РѕРІС– СЃС‚РёР»С–: РїС–РґС…С–Рґ РІС–Рґ РґРµСЃРєС‚РѕРїР° С– СЃРїС–Р»СЊРЅС– РєРѕРјРїРѕРЅРµРЅС‚Рё */
 
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;700;800&display=swap");
 
-/* Токени теми: кольори, поверхні, акценти, ефекти */
+/* РўРѕРєРµРЅРё С‚РµРјРё: РєРѕР»СЊРѕСЂРё, РїРѕРІРµСЂС…РЅС–, Р°РєС†РµРЅС‚Рё, РµС„РµРєС‚Рё */
 
 :root {
   --bg: #05050a;
@@ -37,12 +37,12 @@
 @keyframes reveal-soft {
   from {
     opacity: 0;
-    filter: blur(8px) saturate(0.9);
+    transform: translateY(8px) scale(0.995);
   }
 
   to {
     opacity: 1;
-    filter: blur(0) saturate(1);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -65,15 +65,11 @@
 
 @keyframes grid-drift {
   from {
-    background-position:
-      0 0,
-      0 0;
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    background-position:
-      34px 17px,
-      17px 34px;
+    transform: translate3d(17px, 17px, 0);
   }
 }
 
@@ -88,7 +84,7 @@
   }
 }
 
-/* Глобальне скидання і поведінка документа */
+/* Р“Р»РѕР±Р°Р»СЊРЅРµ СЃРєРёРґР°РЅРЅСЏ С– РїРѕРІРµРґС–РЅРєР° РґРѕРєСѓРјРµРЅС‚Р° */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -114,7 +110,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -34px;
   pointer-events: none;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
@@ -122,7 +118,8 @@ body::before {
   background-size: 34px 34px;
   opacity: 0.2;
   z-index: -3;
-  animation: grid-drift 28s linear infinite;
+  will-change: transform;
+  animation: grid-drift 52s linear infinite;
 }
 
 .page-glow {
@@ -137,6 +134,7 @@ body::before {
     ),
     radial-gradient(circle at 8% 62%, rgba(182, 255, 45, 0.16), transparent 32%);
   z-index: -2;
+  will-change: transform, opacity;
   animation: glow-drift 16s ease-in-out infinite alternate;
 }
 
@@ -149,13 +147,14 @@ main {
   overflow-x: clip;
 }
 
-/* Хедер, навігація і спільні інтерактивні елементи */
+/* РҐРµРґРµСЂ, РЅР°РІС–РіР°С†С–СЏ С– СЃРїС–Р»СЊРЅС– С–РЅС‚РµСЂР°РєС‚РёРІРЅС– РµР»РµРјРµРЅС‚Рё */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line);
   background: rgba(5, 6, 12, 0.86);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
@@ -191,11 +190,11 @@ main {
 }
 
 .brand span:nth-child(2) {
-  animation-delay: 90ms;
+  animation-delay: 45ms;
 }
 
 .brand span:nth-child(3) {
-  animation-delay: 170ms;
+  animation-delay: 85ms;
 }
 
 .brand span:last-child {
@@ -234,8 +233,8 @@ main {
     border-color 0.25s var(--ease-soft),
     color 0.25s var(--ease-soft),
     background-color 0.25s var(--ease-soft),
-    transform 0.25s var(--ease-out-smooth),
-    box-shadow 0.25s var(--ease-soft);
+    transform 0.25s var(--ease-out-smooth);
+  will-change: transform;
 }
 
 .main-nav a:hover,
@@ -243,7 +242,6 @@ main {
   border-color: var(--pink);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 0 0 1px rgba(255, 79, 216, 0.2);
 }
 
 a:focus-visible {
@@ -277,6 +275,7 @@ a:focus-visible {
   justify-content: center;
   text-decoration: none;
   font-weight: 700;
+  will-change: transform;
 }
 
 .arena-btn {
@@ -286,19 +285,15 @@ a:focus-visible {
   border-radius: 10px;
   font-size: 13px;
   transition:
-    transform 0.25s var(--ease-out-smooth),
-    box-shadow 0.25s var(--ease-soft),
-    filter 0.25s var(--ease-soft);
+    transform 0.25s var(--ease-out-smooth);
 }
 
 .arena-btn:hover,
 .arena-btn:focus-visible {
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(182, 255, 45, 0.28);
-  filter: saturate(1.06);
 }
 
-/* Секція вступного екрану */
+/* РЎРµРєС†С–СЏ РІСЃС‚СѓРїРЅРѕРіРѕ РµРєСЂР°РЅСѓ */
 .hero {
   padding: 64px 0 24px;
 }
@@ -368,7 +363,6 @@ a:focus-visible {
   border: 1px solid transparent;
   transition:
     transform 0.25s var(--ease-out-smooth),
-    box-shadow 0.25s var(--ease-soft),
     border-color 0.25s var(--ease-soft),
     background-color 0.25s var(--ease-soft),
     color 0.25s var(--ease-soft);
@@ -377,7 +371,6 @@ a:focus-visible {
 .action-btn:hover,
 .action-btn:focus-visible {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(53, 232, 255, 0.16);
 }
 
 .action-btn.primary {
@@ -394,7 +387,7 @@ a:focus-visible {
 .hero-stack {
   display: grid;
   gap: 12px;
-  animation: reveal-up 820ms var(--ease-out-smooth) 100ms both;
+  animation: reveal-up 820ms var(--ease-out-smooth) 50ms both;
 }
 
 .status-card {
@@ -408,8 +401,7 @@ a:focus-visible {
   min-height: 110px;
   transition:
     border-color 0.26s var(--ease-soft),
-    box-shadow 0.26s var(--ease-soft),
-    filter 0.26s var(--ease-soft);
+    box-shadow 0.26s var(--ease-soft);
   animation: reveal-soft 560ms var(--ease-out-smooth) both;
 }
 
@@ -473,14 +465,13 @@ a:focus-visible {
 .status-card:focus-within {
   border-color: rgba(122, 145, 231, 0.8);
   box-shadow: 0 10px 24px rgba(10, 14, 30, 0.45);
-  filter: brightness(1.04);
 }
 
 .ticker-track {
   margin-top: 34px;
   border-top: 1px solid #2f3a63;
   border-bottom: 1px solid #2f3a63;
-  animation: reveal-soft 680ms var(--ease-out-smooth) 120ms both;
+  animation: reveal-soft 680ms var(--ease-out-smooth) 60ms both;
 }
 
 .ticker {
@@ -495,7 +486,7 @@ a:focus-visible {
   font-size: 13px;
 }
 
-/* Спільний вертикальний ритм контентних секцій */
+/* РЎРїС–Р»СЊРЅРёР№ РІРµСЂС‚РёРєР°Р»СЊРЅРёР№ СЂРёС‚Рј РєРѕРЅС‚РµРЅС‚РЅРёС… СЃРµРєС†С–Р№ */
 .bento,
 .schedule,
 .rules,
@@ -505,14 +496,23 @@ a:focus-visible {
   padding: 74px 0;
 }
 
-/* Огляд раундів (бенто-картки) */
+.schedule,
+.rules,
+.prizes,
+.judging,
+.chaos-gallery {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 740px;
+}
+
+/* РћРіР»СЏРґ СЂР°СѓРЅРґС–РІ (Р±РµРЅС‚Рѕ-РєР°СЂС‚РєРё) */
 .bento-grid {
   margin-top: 14px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   grid-auto-rows: minmax(130px, auto);
-  animation: reveal-up 760ms var(--ease-out-smooth) 120ms both;
+  animation: reveal-up 760ms var(--ease-out-smooth) 60ms both;
 }
 
 .bento-card {
@@ -522,15 +522,13 @@ a:focus-visible {
   position: relative;
   transition:
     border-color 0.26s var(--ease-soft),
-    box-shadow 0.26s var(--ease-soft),
-    filter 0.26s var(--ease-soft);
+    box-shadow 0.26s var(--ease-soft);
 }
 
 .bento-card:hover,
 .bento-card:focus-within {
   border-color: rgba(136, 160, 255, 0.75);
   box-shadow: 0 10px 22px rgba(8, 12, 25, 0.46);
-  filter: brightness(1.04);
 }
 
 .bento-card h3 {
@@ -588,7 +586,7 @@ a:focus-visible {
   line-height: 1;
 }
 
-/* Секція таймлайну / розкладу */
+/* РЎРµРєС†С–СЏ С‚Р°Р№РјР»Р°Р№РЅСѓ / СЂРѕР·РєР»Р°РґСѓ */
 .schedule {
   background: linear-gradient(
     180deg,
@@ -602,7 +600,7 @@ a:focus-visible {
   grid-template-columns: 120px minmax(0, 1fr);
   gap: 20px;
   align-items: stretch;
-  animation: reveal-up 780ms var(--ease-out-smooth) 140ms both;
+  animation: reveal-up 780ms var(--ease-out-smooth) 70ms both;
 }
 
 .timeline-word {
@@ -637,19 +635,19 @@ a:focus-visible {
 }
 
 .timeline-row:nth-child(2) {
-  animation-delay: 70ms;
+  animation-delay: 35ms;
 }
 
 .timeline-row:nth-child(3) {
-  animation-delay: 140ms;
+  animation-delay: 70ms;
 }
 
 .timeline-row:nth-child(4) {
-  animation-delay: 210ms;
+  animation-delay: 105ms;
 }
 
 .timeline-row:nth-child(5) {
-  animation-delay: 280ms;
+  animation-delay: 140ms;
 }
 
 .timeline-row:hover,
@@ -708,13 +706,13 @@ a:focus-visible {
   border-left: 4px solid var(--pink);
 }
 
-/* Картки правил */
+/* РљР°СЂС‚РєРё РїСЂР°РІРёР» */
 .rules-grid {
   margin-top: 14px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  animation: reveal-up 760ms var(--ease-out-smooth) 160ms both;
+  animation: reveal-up 760ms var(--ease-out-smooth) 80ms both;
 }
 
 .rule-card {
@@ -726,28 +724,26 @@ a:focus-visible {
   overflow: hidden;
   transition:
     border-color 0.24s var(--ease-soft),
-    box-shadow 0.24s var(--ease-soft),
-    filter 0.24s var(--ease-soft);
+    box-shadow 0.24s var(--ease-soft);
   animation: reveal-soft 560ms var(--ease-out-smooth) both;
 }
 
 .rule-card:nth-child(2) {
-  animation-delay: 80ms;
+  animation-delay: 40ms;
 }
 
 .rule-card:nth-child(3) {
-  animation-delay: 160ms;
+  animation-delay: 80ms;
 }
 
 .rule-card:nth-child(4) {
-  animation-delay: 240ms;
+  animation-delay: 120ms;
 }
 
 .rule-card:hover,
 .rule-card:focus-within {
   border-color: rgba(130, 154, 244, 0.8);
   box-shadow: 0 10px 20px rgba(7, 10, 24, 0.44);
-  filter: brightness(1.04);
 }
 
 .rule-number {
@@ -792,12 +788,12 @@ a:focus-visible {
   border-left: 4px solid var(--pink);
 }
 
-/* Блок призів */
+/* Р‘Р»РѕРє РїСЂРёР·С–РІ */
 .prize-shell {
   border: 1px solid #333b63;
   padding: 26px;
   background: linear-gradient(150deg, #111528 0%, #0b0f1f 100%);
-  animation: reveal-up 760ms var(--ease-out-smooth) 170ms both;
+  animation: reveal-up 760ms var(--ease-out-smooth) 85ms both;
 }
 
 .prize-shell h2 {
@@ -827,24 +823,22 @@ a:focus-visible {
   min-height: 180px;
   transition:
     border-color 0.24s var(--ease-soft),
-    box-shadow 0.24s var(--ease-soft),
-    filter 0.24s var(--ease-soft);
+    box-shadow 0.24s var(--ease-soft);
   animation: reveal-soft 600ms var(--ease-out-smooth) both;
 }
 
 .prize-card:nth-child(2) {
-  animation-delay: 90ms;
+  animation-delay: 45ms;
 }
 
 .prize-card:nth-child(3) {
-  animation-delay: 180ms;
+  animation-delay: 90ms;
 }
 
 .prize-card:hover,
 .prize-card:focus-within {
   border-color: rgba(136, 160, 248, 0.8);
   box-shadow: 0 10px 22px rgba(8, 11, 24, 0.42);
-  filter: brightness(1.04);
 }
 
 .prize-card .rank {
@@ -904,12 +898,12 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
-/* Суддівство і оцінювання */
+/* РЎСѓРґРґС–РІСЃС‚РІРѕ С– РѕС†С–РЅСЋРІР°РЅРЅСЏ */
 .judging-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 18px;
-  animation: reveal-up 760ms var(--ease-out-smooth) 180ms both;
+  animation: reveal-up 760ms var(--ease-out-smooth) 90ms both;
 }
 
 .judges-panel,
@@ -919,8 +913,7 @@ a:focus-visible {
   padding: 22px;
   transition:
     border-color 0.24s var(--ease-soft),
-    box-shadow 0.24s var(--ease-soft),
-    filter 0.24s var(--ease-soft);
+    box-shadow 0.24s var(--ease-soft);
 }
 
 .judges-panel:hover,
@@ -929,7 +922,6 @@ a:focus-visible {
 .score-panel:focus-within {
   border-color: rgba(129, 155, 247, 0.78);
   box-shadow: 0 10px 24px rgba(8, 12, 26, 0.44);
-  filter: brightness(1.04);
 }
 
 .judges-panel h2 {
@@ -990,7 +982,7 @@ a:focus-visible {
   background: linear-gradient(90deg, var(--cyan), var(--lime));
 }
 
-/* Галерея хаосу і заклик до участі */
+/* Р“Р°Р»РµСЂРµСЏ С…Р°РѕСЃСѓ С– Р·Р°РєР»РёРє РґРѕ СѓС‡Р°СЃС‚С– */
 .chaos-gallery {
   background: linear-gradient(
     180deg,
@@ -1004,7 +996,7 @@ a:focus-visible {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 11px;
-  animation: reveal-up 780ms var(--ease-out-smooth) 200ms both;
+  animation: reveal-up 780ms var(--ease-out-smooth) 100ms both;
 }
 
 .sticker {
@@ -1017,48 +1009,46 @@ a:focus-visible {
   text-transform: uppercase;
   transition:
     border-color 0.22s var(--ease-soft),
-    box-shadow 0.22s var(--ease-soft),
-    filter 0.22s var(--ease-soft);
+    box-shadow 0.22s var(--ease-soft);
   animation: reveal-soft 520ms var(--ease-out-smooth) both;
 }
 
 .sticker:nth-child(2) {
-  animation-delay: 60ms;
+  animation-delay: 30ms;
 }
 
 .sticker:nth-child(3) {
-  animation-delay: 120ms;
+  animation-delay: 60ms;
 }
 
 .sticker:nth-child(4) {
-  animation-delay: 180ms;
+  animation-delay: 90ms;
 }
 
 .sticker:nth-child(5) {
-  animation-delay: 240ms;
+  animation-delay: 120ms;
 }
 
 .sticker:nth-child(6) {
-  animation-delay: 300ms;
+  animation-delay: 150ms;
 }
 
 .sticker:nth-child(7) {
-  animation-delay: 360ms;
+  animation-delay: 180ms;
 }
 
 .sticker:nth-child(8) {
-  animation-delay: 420ms;
+  animation-delay: 210ms;
 }
 
 .sticker:nth-child(9) {
-  animation-delay: 480ms;
+  animation-delay: 240ms;
 }
 
 .sticker:hover,
 .sticker:focus-within {
   border-color: rgba(132, 157, 250, 0.82);
   box-shadow: 0 8px 18px rgba(8, 12, 24, 0.42);
-  filter: brightness(1.06);
 }
 
 .sticker.wide {
@@ -1117,7 +1107,7 @@ a:focus-visible {
   align-items: center;
   flex-wrap: wrap;
   background: rgba(16, 22, 44, 0.9);
-  animation: reveal-up 780ms var(--ease-out-smooth) 220ms both;
+  animation: reveal-up 780ms var(--ease-out-smooth) 110ms both;
   transition:
     border-color 0.24s var(--ease-soft),
     box-shadow 0.24s var(--ease-soft);
@@ -1133,7 +1123,7 @@ a:focus-visible {
   font-size: clamp(1.6rem, 3vw, 2.5rem);
 }
 
-/* Футер */
+/* Р¤СѓС‚РµСЂ */
 .site-footer {
   position: relative;
   padding: 30px 0 34px;
@@ -1160,7 +1150,7 @@ a:focus-visible {
   grid-template-columns: 1fr auto 1fr;
   gap: 16px;
   align-items: end;
-  animation: reveal-soft 760ms var(--ease-out-smooth) 260ms both;
+  animation: reveal-soft 760ms var(--ease-out-smooth) 130ms both;
 }
 
 .footer-brand {
@@ -1199,3 +1189,26 @@ a:focus-visible {
   font-size: clamp(1.8rem, 4vw, 3.4rem);
   color: #d5dcff;
 }
+
+@media (max-width: 760px), (hover: none) and (pointer: coarse) {
+  body::before {
+    animation: none;
+    opacity: 0.14;
+  }
+
+  .page-glow {
+    animation-duration: 24s;
+  }
+
+  .pill {
+    animation: none;
+    box-shadow: none;
+  }
+
+  .site-header {
+    background: rgba(5, 6, 12, 0.94);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+

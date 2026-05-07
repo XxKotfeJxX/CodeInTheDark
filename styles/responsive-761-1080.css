@@ -64,7 +64,8 @@
   }
 
   .site-header {
-    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .header-grid {
@@ -87,6 +88,7 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    padding-top: 2px;
     padding-bottom: 4px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
