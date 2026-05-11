@@ -1,7 +1,7 @@
 (() => {
   // Встав сюди посилання, яке має відкривати кнопка "Join CTRL ALT NIGHT".
   // Приклад: const JOIN_ARENA_URL = "https://example.com/register";
-  const JOIN_ARENA_URL = "";
+  const JOIN_ARENA_URL = "https://t.me/citd_lpnu_bot?start=join_arena";
 
   const joinArenaButton = document.getElementById("joinArenaButton");
   if (!joinArenaButton) return;
