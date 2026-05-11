@@ -1,16 +1,16 @@
 ﻿/* Маніфест підключення стилів */
 /* Порядок підключення: база -> адаптив (від ширших до вужчих) -> доступність */
 /* Базові стилі і компоненти (підхід від десктопа) */
-@import url("./styles/base.css");
+@import url("./styles/base.css?v=20260511-1");
 /* Планшети і невеликі ноутбуки */
-@import url("./styles/responsive-761-1080.css") screen and (max-width: 1080px);
+@import url("./styles/responsive-761-1080.css?v=20260511-1") screen and (max-width: 1080px);
 /* Планшети у портретній орієнтації і великі телефони */
-@import url("./styles/responsive-481-760.css") screen and (max-width: 760px);
+@import url("./styles/responsive-481-760.css?v=20260511-1") screen and (max-width: 760px);
 /* Основний телефонний брейкпоїнт */
-@import url("./styles/responsive-0-480.css") screen and (max-width: 480px);
+@import url("./styles/responsive-0-480.css?v=20260511-1") screen and (max-width: 480px);
 /* Додаткове ущільнення для дуже вузьких екранів */
-@import url("./styles/responsive-0-430.css") screen and (max-width: 430px);
+@import url("./styles/responsive-0-430.css?v=20260511-1") screen and (max-width: 430px);
 /* Найвужчий варіант для мікролейауту призів */
-@import url("./styles/responsive-0-420.css") screen and (max-width: 420px);
+@import url("./styles/responsive-0-420.css?v=20260511-1") screen and (max-width: 420px);
 /* Системні правила доступності */
-@import url("./styles/accessibility.css");
+@import url("./styles/accessibility.css?v=20260511-1");
